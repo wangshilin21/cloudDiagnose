@@ -1,0 +1,11 @@
+<!-- pages/components/view/pages/circle/index.wxml -->
+<view class = "title">MOT FLASH</view>
+<view class="circle-container">
+	<l-circle percent='{{percent}}' inner-diameter='350' outer-diameter='500' value-size='60' show-value='{{true}}'></l-circle>
+</view>
+
+<view class="return">
+
+<l-button class="startButton" bind:lintap='startFlash' type="default" size="large" shape="semicircle">{{title}}</l-button>
+<l-button class="returnButton" bind:lintap='return' type="default" size="large" shape="semicircle">返回</l-button>
+</view>

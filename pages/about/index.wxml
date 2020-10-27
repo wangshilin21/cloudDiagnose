@@ -1,0 +1,19 @@
+<!-- pages/about/index.wxml -->
+<view class='container'>
+  <image class="logo" src="../../images/logo.png"></image>
+  <view class='attribute-container'>
+    <view class='attribute-title'>个人中心</view>
+    <view class='attribute-item'>
+      <view class='attribute-code-container'>
+        <view class='code-circle'></view>
+        <view class='code-name'>公司</view>
+        <view class='coder'>一汽-大众 FAW-VW</view>
+      </view>
+      <view class='attribute-code-container'>
+        <view class='code-circle'></view>
+        <view class='code-name'>部门</view>
+        <view class='coder'>电子电器规划科T-G-PP-5</view>
+      </view>
+    </view>
+  </view>
+</view>

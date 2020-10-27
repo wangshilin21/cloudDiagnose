@@ -1,0 +1,202 @@
+/* pages/layout/pages/grid/index.wxss */
+
+/* .view-container  {
+  width: 280rpx;
+} */
+
+.num {
+  color: #fc6517;
+  font-size: 42rpx;
+  font-style: italic;
+}
+
+.text {
+  height: 30rpx;
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+  line-height: 30rpx;
+  margin-top: 9rpx;
+}
+
+.grid-item {
+  height: 200rpx;
+} 
+.btn button{
+	width: 48%;
+  height: 240rpx;
+  background-color:red;
+  border-radius:40px 40px 40px 40px;
+  padding-top: 50rpx;
+	margin-bottom: 10rpx;
+  align-items: center;
+  justify-content: center;
+  text-align:center;
+}
+.lightbackgroud{
+  display: flex;
+}
+.btn2{
+	width: 48%;
+  height: 300rpx;
+  background-color:#1c51c4;
+  border-radius:0px 0px 0px 0px;
+  padding-top: 50rpx;
+	margin-bottom: 10rpx;
+  align-items: center;
+  justify-content: center;
+  text-align:center;
+}
+
+.btn2 image {
+	width: 100rpx;
+	height: 100rpx;
+	display: inline-block;
+	vertical-align: middle;
+  margin-top: 0rpx;
+}
+
+.btn3{
+	width: 48%;
+  height: 300rpx;
+  background-color:#1c51c4;
+  border-radius:0px 0px 0px 0px;
+  padding-top: 50rpx;
+	margin-bottom: 10rpx;
+  align-items: center;
+  justify-content: center;
+  text-align:center;
+}
+
+.btn3 image {
+	width: 100rpx;
+	height: 100rpx;
+	display: inline-block;
+	vertical-align: middle;
+  margin-top: 0rpx;
+}
+
+.btn5{
+	width: 60%;
+  height: 300rpx;
+  background-color:#1c51c4;
+  border-radius:20px 20px 20px 20px;
+  padding-top: 50rpx;
+	margin-bottom: 10rpx;
+  align-items: center;
+  justify-content: center;
+  text-align:center;
+}
+.trunk{
+  align-items: center;
+  justify-content: center;
+  text-align:center;
+}
+.btn5 image {
+	width: 100rpx;
+	height: 100rpx;
+	display: inline-block;
+	vertical-align: middle;
+  margin-top: 0rpx;
+}
+.btn4{
+	width: 48%;
+  height: 300rpx;
+  background-color:#1c51c4;
+  border-radius:0px 0px 0px 0px;
+  padding-top: 50rpx;
+	margin-bottom: 10rpx;
+  align-items: center;
+  justify-content: center;
+  text-align:center;
+}
+.option{
+margin-top: 30rpx;
+color: white;
+}
+.btn4 image {
+	width: 100rpx;
+	height: 100rpx;
+	display: inline-block;
+	vertical-align: middle;
+  margin-top: 0rpx;
+}
+.lowBeam{
+  margin-top: 20rpx;
+}
+.highBeam{
+  margin-top: 20rpx;
+}
+.alarm{
+  margin-top: 20rpx;
+}
+.btn image {
+	width: 100rpx;
+	height: 100rpx;
+	display: inline-block;
+	vertical-align: middle;
+  margin-top: 0rpx;
+}
+.optionHorn{
+  color:white;
+}
+.hornTest{
+  display:flex;
+  align-items:center;
+  justify-content:center; 
+}
+.alarmTitle{
+  font-size: 30rpx;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+}
+.alarmLight{
+  display:flex;
+  align-items:center; 
+  margin-left: 40rpx;
+  margin-right:40rpx;
+  border-color:#3963bc;
+  border-width: 0rpx 0rpx 3rpx 0rpx;
+  border-style: solid;
+  padding-top: 20rpx;
+}
+.alarmButton{
+  margin-left: 250rpx;
+}
+.windowTitle{
+  font-size: 30rpx;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+}
+.windowLight{
+  display:flex;
+  align-items:center; 
+  margin-left: 40rpx;
+  margin-right:40rpx;
+  border-color:#3963bc;
+  border-width: 0rpx 0rpx 3rpx 0rpx;
+  border-style: solid;
+  padding-top: 20rpx;
+}
+.windowButton{
+  margin-left: 220rpx;
+}
+.trunkTitle{
+  font-size: 30rpx;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+}
+.trunk{
+  display:flex;
+  align-items:center; 
+  margin-left: 40rpx;
+  margin-right:40rpx;
+  border-color:#3963bc;
+  border-width: 0rpx 0rpx 3rpx 0rpx;
+  border-style: solid;
+  padding-top: 20rpx;
+}
+.trunkButton{
+  margin-left: 220rpx;
+}

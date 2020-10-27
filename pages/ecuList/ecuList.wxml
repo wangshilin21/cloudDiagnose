@@ -1,0 +1,20 @@
+<!--pages/ecuList/ecuList.wxml-->
+<view class="container">
+	<view class="section">
+		<navi-title title="{{title}}" count="{{config.length}}" />
+		<view>
+			<button bindtap="toFuncList" class="back" wx:for="{{config}}" wx:for-item="config" wx:key="ecuIndex" id="{{index}}"  data-idx="{{ecuIndex}}">
+				<view class="detail-navi">
+					<view class="detail-left">
+						<image src="{{config.icon}}" class="detail-icon" />
+						<view class="detail-content">
+							<text class="detail-navi-name"> {{config.title}}</text>
+						</view>
+					</view>
+					<image class="navi-button" src="/images/right-arrow.png" />
+
+				</view>
+			</button>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "navi-content":"/components/navi-content/index",
+    "navi-title": "/components/navi-title/index"
+  }
+}

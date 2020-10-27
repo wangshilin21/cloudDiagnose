@@ -1,0 +1,178 @@
+page {  
+  display: block;  
+  min-height: 100%;  
+  background-color:rgb(204, 223, 233);  
+}  
+.card-dot {
+  width: 18rpx;
+  height: 18rpx;
+  border-radius: 50%;
+  border: 6rpx solid #3963bc;
+  margin-left: 26rpx;
+}
+
+.card-top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 750rpx;
+  height: 100rpx;
+}
+.Soll{
+  display: flex;
+  font-size: 36rpx;
+  color: #3963bc;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 50rpx;
+  margin-top: 35rpx;
+}
+.Ist{
+  display: flex;
+  font-size: 36rpx;
+  color: #3963bc;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 50rpx;
+  margin-top: 35rpx;
+}
+.check{
+  display: flex;
+  margin-left: 50rpx;
+  margin-top: 35rpx;
+}
+.titleAbove {
+  width:100%;
+  height:200rpx;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size: 60rpx;
+  font-weight: 700;
+  color:#3963bc;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 5rpx;
+  background-color: #EBEBEB;
+}
+.Result{
+  font-size: 38rpx;
+  color:#3963bc;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.SollValue{
+  margin-left: 50rpx;
+}
+.IstValue{
+  margin-left: 70rpx;
+}
+.ok{
+  margin-left: 100rpx;
+  font-size: 38rpx;
+  font-weight: 50rpx;
+  color:green;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.nok{
+  margin-left: 100rpx;
+  font-size: 38rpx;
+  font-weight: 50rpx;
+  color:red;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.option {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size: 36rpx;
+  color:white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.content-name {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(69, 82, 107, 1);
+  line-height: 20px;
+  margin-left: 8px;
+}
+
+.card {
+  margin: 20rpx auto !important;
+  height: 350rpx;
+  width: 80%;
+  border-color:#3963bc;
+  border-width: 10rpx 10rpx 10rpx 10rpx;
+  border-style: solid;
+  border-radius: 50rpx;
+  background-color: white;
+}
+
+.card2 {
+  margin: 20rpx auto !important;
+  height: 200rpx;
+  width: 80%;
+  border-color:#3963bc;
+  border-width: 10rpx 10rpx 10rpx 10rpx;
+  border-style: solid;
+  border-radius: 50rpx;
+  background-color: white;
+}
+.title {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin: 0rpx auto !important;
+  height: 75rpx;
+  width: 100%;
+  border-color:#3963bc;
+  border-width: 0rpx 0rpx 8rpx 0rpx;
+  border-style: solid;
+  border-radius: 15rpx;
+  background-color: #3963bc;
+}
+
+
+.right-card {
+  height: 180rpx !important;
+  width: 220rpx !important;
+  border-radius: 12rpx !important;
+}
+
+.content {
+  margin-top: 10rpx;
+  color: #666;
+  font-size: 26rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+}
+
+.avter-content {
+  margin-top: 10rpx;
+  color: #333;
+  font-size: 26rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+}
+
+.avter-share-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.like-container{
+  display: flex;
+  flex-direction: row;
+  margin-left: 40rpx;
+  align-items: center
+}
+
+.number{
+  color: #666;
+  font-size: 24rpx;
+  margin-left: 12rpx;
+}

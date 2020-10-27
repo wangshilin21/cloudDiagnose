@@ -1,0 +1,43 @@
+<!--pages/view/pages/dialog/index.wxml-->
+<view class='container'>
+
+  <content-title>
+    <image class="welcomePic" src="../../images/welcome.png"></image>
+
+    <content-card
+      class="content"
+      name="请输入登陆信息"
+    >
+      <view class='buttun-wrapper'>
+        <l-input
+          placeholder="请输入账号"
+          width="750"
+          show-row="{{ false }}"
+          width="600"
+          l-class='input-phone'
+          label-width="120"
+          clear="{{true}}"
+          bind:lininput="inputUserName"
+        >
+          <l-icon class='input-icon' slot="left" name="phone"/>
+        </l-input>
+      </view>
+      <view class='buttun-wrapper'>
+        <l-input
+          placeholder="请输入密码"
+          width="750"
+          show-row="{{ false }}"
+          width="600"
+          l-class='input-phone'
+          label-width="120"
+          clear="{{true}}"
+          type="password"
+          bind:lininput="inputPassword"
+        >
+          <l-icon class='input-icon' slot="left" name="password"/>
+        </l-input>
+      </view>
+    </content-card>
+    <l-button bind:lintap='login' type="default" size="large" shape="semicircle">登录</l-button>
+  </content-title>
+</view>

@@ -1,0 +1,11 @@
+<view class = "title">{{ecuName}}  ZDC写入</view>
+<view class="coding">
+		<image wx:if="{{imageStatus==0}}" class='header-bg' src='/images/coding.png'></image>
+		<image wx:if="{{imageStatus==1}}" class='header-bg' src='/images/coding3.png'></image>
+		<image wx:if="{{imageStatus==2}}" class='header-bg' src='/images/coding.png'></image>
+		<image wx:if="{{imageStatus==3}}" class='header-bg' src='/images/coding2.png'></image>
+</view>
+<l-button wx:if="{{ZDCStatus==0}}" class="returnButton" bind:lintap='zdcCheck'  loading="{{false}}" plain="{{true}}" type="default" width="600" shape="semicircle">ZDC状态检查</l-button>
+<l-button wx:if="{{ZDCStatus==1}}" class="returnButton" loading="{{true}}" plain="{{true}}" type="default" width="600" shape="semicircle">ZDC核查中</l-button>
+<l-button class="returnButton" bind:lintap='zdcWrite' loading="{{true}}"  type="default" width="600" shape="semicircle">ZDC写入</l-button>
+<l-button class="returnButton" bind:lintap='return' type="default" width="600" shape="semicircle">返回</l-button>

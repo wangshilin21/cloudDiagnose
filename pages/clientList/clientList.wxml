@@ -1,0 +1,38 @@
+<!--index.wxml-->
+<view class="container">
+	<view class="header">
+		<image class='header-bg' src='/images/static/index_bg.png'></image>
+		<text class='header-desc'><text class='header-name'>云诊断客户端 </text>Developed by T-G-PP-5</text>
+	</view>
+	<view wx:if="{{chooseFunc==0}}" class="pdxChoose">
+		<l-card wx:for="{{shopConfig}}" wx:for-item="naviConfig" wx:key="index" title="请点击下方选择车型代码" position="left" l-class="shop-card" l-img-class="card-img" l-title-class="card-title">
+			<picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+				<view class="picker">
+					当前选择：{{pdxNow}}
+				</view>
+			</picker>
+		</l-card>
+	</view>
+	<view wx:if="{{chooseFunc==0}}" class="checkClientStatus">
+		<l-button bind:lintap='checkClientStatus' type="default" size="large" shape="semicircle">查看诊断头状态</l-button>
+	</view>
+	<view wx:if="{{chooseFunc==0}}" class="main">
+		<navi-card wx:for="{{baseConfig}}" wx:for-item="naviConfig" wx:key="buttonIndex" id="{{index}}"  data-idx="{{buttonIndex}}" title="{{naviConfig.title}}" icon='{{naviConfig.icon}}' data-title="{{naviConfig.title}}" data-navigateMark="{{naviConfig.navigateMark}}" bindtap="onNaviCard" />
+	</view>
+		<view wx:if="{{chooseFunc==1}}" class="label" name="控制器检测">
+			<view class="btn" style="opacity:{{0.8}}">
+				<button bindtap="ecuConfig">
+					<image src="../../images/setting.png"></image>
+					<view class="option">控制器设置</view>
+				</button>
+			</view>
+		</view>
+		<view wx:if="{{chooseFunc==1}}" class="label" name="控制器检测">
+			<view class="btn" style="opacity:{{0.8}}">
+				<button bindtap="ioControl">
+					<image src="../../images/light.png"></image>
+					<view class="option">I/O控制</view>
+				</button>
+			</view>
+		</view>
+	</view>

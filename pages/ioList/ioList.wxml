@@ -1,0 +1,94 @@
+<!--pages/layout/pages/grid/index.wxml-->
+<view class='container'>
+	<content-title name="I/O控制" describe="{{keyInfo}}">
+		<content-card class="content" name="喇叭控制">
+			<view class="btn" style="opacity:{{0.8}}">
+				<button bindtap="hornTest">
+					<image src="../../images/horn.png"></image>
+					<view class="optionHorn">鸣笛</view>
+				</button>
+			</view>
+		</content-card>
+
+		<content-card class="content" name="灯光控制">
+			<view class="lightbackgroud">
+				<view class="btn2">
+					<image src="../../images/jin.png"></image>
+
+					<view class="option">近光灯</view>
+					<switch class="lowBeam" type="switch" checked="{{lowBeamStatus}}" bindchange="lowBeamTest" />
+				</view>
+				<view class="btn3">
+					<image src="../../images/yuan.png"></image>
+					<view class="option">远光灯</view>
+					<switch class="highBeam" type="switch" checked="{{highBeamStatus}}" bindchange="highBeamTest" />
+				</view>
+				<view class="btn4">
+					<image src="../../images/alarm.png"></image>
+
+					<view class="option">双闪灯</view>
+					<switch class="alarm" type="switch" checked="{{alarmStatus}}" bindchange="alarmTest" />
+				</view>
+			</view>
+		</content-card>
+
+		<content-card class="content" name="车窗控制">
+			<view class="lightbackgroud2">
+
+				<view class="btnFL">
+					<image src="../../images/door.png"></image>
+					<view class="option2">左前车窗</view>
+					<switch type="switch" checked="{{FLStatus}}" bindchange="FLSwitch" />
+				</view>
+				<view class="btnNull">
+
+				</view>
+				<view class="btnFR">
+					<image src="../../images/door.png"></image>
+					<view class="option2">右前车窗</view>
+					<switch type="switch" checked="{{FRStatus}}" bindchange="FRSwitch" />
+				</view>
+
+			</view>
+			<view class="lightbackgroud2">
+
+				<view class="btnNull">
+				</view>
+				<view class="btnFR">
+					<image src="../../images/door.png"></image>
+					<view class="option2">全部车窗</view>
+					<switch type="switch" checked="{{allWindowStatus}}" bindchange="allWindowSwitch" />
+				</view>
+				<view class="btnNull">
+				</view>
+
+			</view>
+			<view class="lightbackgroud2">
+
+				<view class="btnFL">
+					<image src="../../images/door.png"></image>
+					<view class="option2">左后车窗</view>
+					<switch type="switch" checked="{{RLStatus}}" bindchange="RLSwitch" />
+				</view>
+				<view class="btnNull">
+				</view>
+				<view class="btnFR">
+					<image src="../../images/door.png"></image>
+					<view class="option2">右后车窗</view>
+					<switch type="switch" checked="{{RRStatus}}" bindchange="RRSwitch" />
+				</view>
+
+			</view>
+		</content-card>
+
+		<content-card class="content" name="后备箱控制">
+			<view class="trunk">
+				<view class="btn5">
+					<image src="../../images/trunk.png"></image>
+					<view class="option">后备箱盖</view>
+					<switch class="lowBeam" type="switch" checked="{{trunkStatus}}" bindchange="trunkTest" />
+				</view>
+			</view>
+		</content-card>
+	</content-title>
+</view>

@@ -1,0 +1,10 @@
+<!-- pages/layout/pages/list/index.wxml -->
+<view class='container'>
+  <content-title name="功能列表" describe="{{keyInfo}}">
+    <content-card class="content" name="控制器初始化">
+      <l-list title="安装检测" url='../partCheck/partCheck'/>
+      <l-list title="软件刷新" />
+      <l-list title="ZDC写入及核查" url='../zdc/zdc'/>
+    </content-card>
+  </content-title>
+</view>

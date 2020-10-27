@@ -1,0 +1,74 @@
+<view class="titleAbove">{{ecuName}}安装检测</view>
+<view class="card">
+	<view class="title">
+		<text class="option">零件号比对</text>
+	</view>
+
+	<view class="Soll">
+		<view class="SollTitle">Soll:</view>
+		<view class="SollValue">{{partNoSoll}}</view>
+	</view>
+	<view class="Ist">
+		<view class="IstTitle">Ist:</view>
+		<view class="IstValue">{{partNoIst}}</view>
+	</view>
+
+	<view class="check">
+		<view class="Result">Result:</view>
+		<view wx:if="{{partNoResult==1}}" class="ok">OK√</view>
+		<view wx:if="{{partNoResult==0}}" class="nok">NOK ×</view>
+	</view>
+</view>
+
+<view class="card">
+	<view class="title">
+		<text class="option">软件版本比对</text>
+	</view>
+
+	<view class="Soll">
+		<view class="SollTitle">Soll:</view>
+		<view class="SollValue">{{softwareNoSoll}}</view>
+	</view>
+	<view class="Ist">
+		<view class="IstTitle">Ist:</view>
+		<view class="IstValue">{{softwareNoIst}}</view>
+	</view>
+
+	<view class="check">
+		<view class="Result">Result:</view>
+		<view wx:if="{{softwareNoResult==1}}" class="ok">OK√</view>
+		<view wx:if="{{softwareNoResult==0}}" class="nok">NOK ×</view>
+	</view>
+</view>
+
+<view class="card">
+	<view class="title">
+		<text class="option">硬件版本比对</text>
+	</view>
+
+	<view class="Soll">
+		<view class="SollTitle">Soll:</view>
+		<view class="SollValue">{{hardwareNoSoll}}</view>
+	</view>
+	<view class="Ist">
+		<view class="IstTitle">Ist:</view>
+		<view class="IstValue">{{hardwareNoIst}}</view>
+	</view>
+
+	<view class="check">
+		<view class="Result">Result:</view>
+		<view wx:if="{{hardwareNoResult==1}}" class="ok">OK√</view>
+		<view wx:if="{{hardwareNoResult==0}}" class="nok">NOK ×</view>
+	</view>
+</view>
+
+<view wx:if="{{hasZDC==true}}" class="card2">
+	<view class="title">
+		<text class="option">ZDC版本比对</text>
+	</view>
+	<view class="check">
+		<view class="Result">Result:</view>
+		<view wx:if="{{zdcResult==1}}" class="ok">OK√</view>
+		<view wx:if="{{zdcResult==0}}" class="nok">NOK ×</view>
+	</view>
+</view>

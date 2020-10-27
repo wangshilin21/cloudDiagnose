@@ -1,0 +1,13 @@
+<!--pages/layout/pages/grid/index.wxml-->
+<view class='container'>
+	<content-title name="I/O控制" describe="{{keyInfo}}">
+		<content-card class="content" name="Test Button">
+			<view class="btn" style="opacity:{{0.8}}">
+				<button bindtap="test">
+					<image src="../../images/horn.png"></image>
+					<view class="optionHorn">测试</view>
+				</button>
+			</view>
+		</content-card>
+	</content-title>
+</view>
