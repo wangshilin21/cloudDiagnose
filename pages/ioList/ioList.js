@@ -75,7 +75,7 @@ Page({
         wx.showLoading({
           title: 'loading',
         })
-        console.log(res.data.result);
+        console.log("喇叭测试返回值是"+res.data);
         if (res.data.result == 0) {
           wx.hideLoading();
         }
@@ -156,7 +156,13 @@ Page({
       }
     })
   },
-
+  switchClient:function(e){
+    console.log("SWITCH");
+    app.globalData.chooseFunc=0;
+    wx.reLaunch({
+      url: '../clientList/clientList',
+    })
+    },
   lowBeamTest(e) {//近光灯开启 
     this.data.lowBeamStatus = e.detail.value;
     //console.log(this.data.lowBeamStatus);
@@ -185,6 +191,7 @@ Page({
         wx.showLoading({
           title: 'loading',
         })
+        console.log("近光灯返回值是"+res.data);
         // console.log(res.data.result);
         if (res.data.result == 0) {
           wx.hideLoading();
@@ -242,6 +249,7 @@ Page({
         wx.showLoading({
           title: 'loading',
         })
+        console.log("远光灯返回值是"+res.data);
         // console.log(res.data.result);
         if (res.data.result == 0) {
           wx.hideLoading();
@@ -300,6 +308,7 @@ Page({
           title: 'loading',
         })
         // console.log(res.data.result);
+        console.log("双闪灯返回值是"+res.data);
         if (res.data.result == 0) {
           wx.hideLoading();
         }

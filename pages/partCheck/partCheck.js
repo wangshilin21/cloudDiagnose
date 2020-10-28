@@ -7,8 +7,8 @@ Page({
    */
   data: {
     ecuName: 'Null',
-    hasZDC:true,
-    isPartCheckFinished:false,
+    hasZDC: true,
+    isPartCheckFinished: false,
     partNoSoll: '',
     partNoIst: '',
     softwareNoSoll: '',
@@ -28,15 +28,15 @@ Page({
     var that = this;
     console.log("ECU 的 ID是" + app.globalData.ecuID);
     that.setData({
-      partNoIst:'loading...',
-      partNoSoll:'loading...',
-      partNoResult:'loading...',
-      softwareNoIst:'loading...',
-      softwareNoSoll:'loading...',
-      softwareNoResult:'loading...',
-      hardwareNoIst:'loading...',
-      hardwareNoSoll:'loading...',
-      hardwareNoResult:'loading...'
+      partNoIst: 'loading...',
+      partNoSoll: 'loading...',
+      partNoResult: 'loading...',
+      softwareNoIst: 'loading...',
+      softwareNoSoll: 'loading...',
+      softwareNoResult: 'loading...',
+      hardwareNoIst: 'loading...',
+      hardwareNoSoll: 'loading...',
+      hardwareNoResult: 'loading...'
     })
     this.setData({
         ecuName: app.globalData.ecuID
@@ -57,103 +57,112 @@ Page({
           console.log(res.data.result);
           if (res.data.result == 0) {
             var i = setInterval(function () {
-            
-              if(that.data.isPartCheckFinished==false){
-              wx.request({ //轮询检测
-                url: app.globalData.globalUrl,
-                data: {
-                  function: 110,
-                  key: app.globalData.keyID,
-                  ecuName: app.globalData.ecuID
-                },
-                method: 'GET',
-                header: {
-                  'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
-                },
-                success: function (res) {
-                  console.log(res.data.result);
-                  if (res.data.result == 0) {
-                    console.log("安装检测的返回数据是：");
-                    console.log(res.data);
-                    that.setData({
-                      partNoSoll: res.data.installationStatus.tnr.soll,
-                      partNoIst: res.data.installationStatus.tnr.ist,
-                      softwareNoSoll: res.data.installationStatus.swv.soll,
-                      softwareNoIst: res.data.installationStatus.swv.ist,
-                      hardwareNoSoll: res.data.installationStatus.hwv.soll,
-                      hardwareNoIst: res.data.installationStatus.hwv.ist
-                    })
-                    if(res.data.installationStatus.zdc==-2){
-                      that.setData({
-                        hasZDC:false
-                      })
-                    }
-                    if (res.data.installationStatus.zdc == 1 || res.data.installationStatus.zdc == 2 || res.data.installationStatus.zdc == -2) {
-                      if (that.data.partNoIst == that.data.partNoSoll) {
+
+              if (that.data.isPartCheckFinished == false) {
+                wx.request({ //轮询检测
+                  url: app.globalData.globalUrl,
+                  data: {
+                    function: 110,
+                    key: app.globalData.keyID,
+                    ecuName: app.globalData.ecuID
+                  },
+                  method: 'GET',
+                  header: {
+                    'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
+                  },
+                  success: function (res) {
+                    console.log(res.data.result);
+                    if (res.data.result == 0) {
+                      console.log("安装检测的返回数据是：");
+                      console.log(res.data);
+                      if (res.data.installationStatus.zdc == -2) {
                         that.setData({
-                          partNoResult: 1
+                          hasZDC: false
                         })
                       }
-                      if (that.data.partNoIst != that.data.partNoSoll) {
-                        that.setData({
-                          partNoResult: 0
-                        })
-                      }
-                      if (that.data.softwareNoIst == that.data.softwareNoSoll) {
-                        that.setData({
-                          softwareNoResult: 1
-                        })
-                      }
-                      if (that.data.softwareNoIst != that.data.softwareNoSoll) {
-                        that.setData({
-                          softwareNoResult: 0
-                        })
-                      }
-                      if (that.data.hardwareNoIst == that.data.hardwareNoSoll) {
-                        that.setData({
-                          hardwareNoResult: 1
-                        })
-                      }
-                      if (that.data.hardwareNoIst != that.data.hardwareNoSoll) {
-                        that.setData({
-                          hardwareNoResult: 0
-                        })
-                      }
-                      if(res.data.installationStatus.zdc==1){
-                        that.setData({
-                          zdcResult:1
-                        })
-                      }
-                      if(res.data.installationStatus.zdc==2){
-                        that.setData({
-                          zdcResult:0
-                        })
-                      }
-                      that.data.isPartCheckFinished=true;
-                    }
-                    ////在此处渲染前端界面                
-                  }
-                  if (res.data.result == 1) {
-                    wx.hideLoading();
-                    wx.showModal({
-                      title: '查询失败',
-                      showCancel: false, //是否显示取消按钮
-                      confirmText: "确定", //默认是“确定”
-                      confirmColor: 'skyblue', //确定文字的颜色
-                      success: function (res) {
-                        if (res.cancel) {
-                          //点击取消,默认隐藏弹框
-                        } else {
-                          //点击确定
+                      if (res.data.installationStatus.zdc == 1 || res.data.installationStatus.zdc == 2 || res.data.installationStatus.zdc == -2) {
+                        if (that.data.partNoIst == that.data.partNoSoll) {
+                          that.setData({
+                            partNoSoll: res.data.installationStatus.tnr.soll,
+                            partNoIst: res.data.installationStatus.tnr.ist,
+                            partNoResult: 1
+                          })
                         }
-                      },
-                      fail: function (res) {}, //接口调用失败的回调函数
-                      complete: function (res) {}, //接口调用结束的回调函数（调用成功、失败都会执行）
-                    })
+                        if (that.data.partNoIst != that.data.partNoSoll) {
+                          that.setData({
+                            partNoSoll: res.data.installationStatus.tnr.soll,
+                            partNoIst: res.data.installationStatus.tnr.ist,
+                            partNoResult: 0
+                          })
+                        }
+                        if (that.data.softwareNoIst == that.data.softwareNoSoll) {
+                          that.setData({
+
+                            softwareNoSoll: res.data.installationStatus.swv.soll,
+                            softwareNoIst: res.data.installationStatus.swv.ist,
+                            softwareNoResult: 1
+                          })
+                        }
+                        if (that.data.softwareNoIst != that.data.softwareNoSoll) {
+                          that.setData({
+
+                            softwareNoSoll: res.data.installationStatus.swv.soll,
+                            softwareNoIst: res.data.installationStatus.swv.ist,
+                            softwareNoResult: 0
+                          })
+                        }
+                        if (that.data.hardwareNoIst == that.data.hardwareNoSoll) {
+                          that.setData({
+                            hardwareNoSoll: res.data.installationStatus.hwv.soll,
+                            hardwareNoIst: res.data.installationStatus.hwv.ist,
+                            hardwareNoResult: 1
+                          })
+                        }
+                        if (that.data.hardwareNoIst != that.data.hardwareNoSoll) {
+                          that.setData({
+                            hardwareNoSoll: res.data.installationStatus.hwv.soll,
+                            hardwareNoIst: res.data.installationStatus.hwv.ist,
+                            hardwareNoResult: 0
+                          })
+                        }
+                        if (res.data.installationStatus.zdc == 1) {
+                          that.setData({
+                            zdcResult: 1
+                          })
+                        }
+                        if (res.data.installationStatus.zdc == 2) {
+                          that.setData({
+                            zdcResult: 0
+                          })
+                        }
+                        that.data.isPartCheckFinished = true;
+                      }
+                      ////在此处渲染前端界面                
+                    }
+                    if (res.data.result == 1) {
+                      wx.hideLoading();
+                      that.setData({
+                        isPartCheckFinished: true
+                      })
+                      // wx.showModal({
+                      //   title: '查询失败',
+                      //   showCancel: false, //是否显示取消按钮
+                      //   confirmText: "确定", //默认是“确定”
+                      //   confirmColor: 'skyblue', //确定文字的颜色
+                      //   success: function (res) {
+                      //     if (res.cancel) {
+                      //       //点击取消,默认隐藏弹框
+                      //     } else {
+                      //       //点击确定
+                      //     }
+                      //   },
+                      //   fail: function (res) {}, //接口调用失败的回调函数
+                      //   complete: function (res) {}, //接口调用结束的回调函数（调用成功、失败都会执行）
+                      // })
+                    }
                   }
-                }
-              })
-            }
+                })
+              }
             }, 2000)
           }
           if (res.data.result == 1) {
@@ -177,7 +186,6 @@ Page({
         }
       })
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -198,7 +206,11 @@ Page({
   onHide: function () {
 
   },
-
+  backToMenu: function (e) {
+    wx.redirectTo({
+      url: '../functiontest/functiontest',
+    })
+  },
   /**
    * 生命周期函数--监听页面卸载
    */

@@ -1,10 +1,11 @@
 {
   "pages": [
     "pages/clientList/clientList",
-    "pages/zdc/zdc",
-    "pages/test/test",
     "pages/login/login",
     "pages/ioList/ioList",
+    "pages/functiontest/functiontest",
+    "pages/zdc/zdc",
+    "pages/test/test",
     "pages/ecuList/ecuList",
     "pages/partCheck/partCheck",
     "pages/flash/flash",

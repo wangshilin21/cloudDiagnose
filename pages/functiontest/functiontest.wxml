@@ -6,5 +6,6 @@
       <l-list title="软件刷新" />
       <l-list title="ZDC写入及核查" url='../zdc/zdc'/>
     </content-card>
+<l-button class="returnButton" bind:lintap='switchClient' type="default" width="600" shape="semicircle">切换至其他插头</l-button>
   </content-title>
 </view>

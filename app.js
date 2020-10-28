@@ -10,6 +10,7 @@ App({
    keyID:0,//当前使用的诊断头ID
    ecuID:'none',//当前操作的ECU名称
    ecuList:[],//返回该台车的控制器列表
+   chooseFunc:0,
    globalUrl:'http://192.168.43.90:8080/CloudUDS/uds'
   }
 });

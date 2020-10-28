@@ -72,3 +72,4 @@
 		<view wx:if="{{zdcResult==0}}" class="nok">NOK ×</view>
 	</view>
 </view>
+<l-button class="returnButton" bind:lintap='backToMenu' plain="{{true}}" type="default" width="600" shape="semicircle">返回</l-button>

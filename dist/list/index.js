@@ -82,7 +82,7 @@ Component({
     },
     linkType: {
       type: String,
-      value: 'navigateTo'
+      value: 'redirectTo'
     },
     url: String
 

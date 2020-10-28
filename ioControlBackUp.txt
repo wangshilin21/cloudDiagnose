@@ -32,6 +32,55 @@
 			</view>
 		</content-card>
 
+		<content-card class="content" name="车窗控制">
+			<view class="lightbackgroud2">
+
+				<view class="btnFL">
+					<image src="../../images/door.png"></image>
+					<view class="option2">左前车窗</view>
+					<switch type="switch" checked="{{FLStatus}}" bindchange="FLSwitch" />
+				</view>
+				<view class="btnNull">
+
+				</view>
+				<view class="btnFR">
+					<image src="../../images/door.png"></image>
+					<view class="option2">右前车窗</view>
+					<switch type="switch" checked="{{FRStatus}}" bindchange="FRSwitch" />
+				</view>
+
+			</view>
+			<view class="lightbackgroud2">
+
+				<view class="btnNull">
+				</view>
+				<view class="btnFR">
+					<image src="../../images/door.png"></image>
+					<view class="option2">全部车窗</view>
+					<switch type="switch" checked="{{allWindowStatus}}" bindchange="allWindowSwitch" />
+				</view>
+				<view class="btnNull">
+				</view>
+
+			</view>
+			<view class="lightbackgroud2">
+
+				<view class="btnFL">
+					<image src="../../images/door.png"></image>
+					<view class="option2">左后车窗</view>
+					<switch type="switch" checked="{{RLStatus}}" bindchange="RLSwitch" />
+				</view>
+				<view class="btnNull">
+				</view>
+				<view class="btnFR">
+					<image src="../../images/door.png"></image>
+					<view class="option2">右后车窗</view>
+					<switch type="switch" checked="{{RRStatus}}" bindchange="RRSwitch" />
+				</view>
+
+			</view>
+		</content-card>
+
 		<content-card class="content" name="后备箱控制">
 			<view class="trunk">
 				<view class="btn5">

@@ -54,7 +54,13 @@ Page({
   onUnload: function () {
 
   },
-
+  switchClient:function(e){
+  console.log("SWITCH");
+  app.globalData.chooseFunc=0;
+  wx.reLaunch({
+    url: '../clientList/clientList',
+  })
+  },
   /**
    * Page event handler function--Called when user drop down
    */
