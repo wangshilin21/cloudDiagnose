@@ -12,6 +12,7 @@ Page({
     ecuName: 'null',
     isZDCFinished: false, //判定写ZDC是否结束
     isZDCCheckFinished: false, //判定查询ZDC是否结束
+    isZDCCheckInfo:false,
     partNoSoll: '',
     partNoIst: '',
     softwareNoSoll: '',
@@ -83,6 +84,7 @@ Page({
                   isZDCCheckFinished: true,
                   ZDCStatus: 2
                 })
+
               }
               if (res.data.installationStatus.zdc == 2) {
                 // wx.showModal({
@@ -104,6 +106,7 @@ Page({
                   isZDCCheckFinished: true,
                   ZDCStatus: 3
                 })
+
               }
             }
             if (res.data.result == 1) {
@@ -183,6 +186,27 @@ Page({
                       isZDCFinished: true,
                       ZDCWriteResult: 2
                     })
+                    if(that.data.isZDCCheckInfo==false){
+                      wx.showModal({
+                        title: 'ZDC写入已完成',
+                        content: '请进行ZDC校验',
+                        showCancel: false, //是否显示取消按钮
+                        confirmText: "确定", //默认是“确定”
+                        confirmColor: 'skyblue', //确定文字的颜色
+                        success: function (res) {
+                          if (res.cancel) {
+                            //点击取消,默认隐藏弹框
+                          } else {
+                            //点击确定
+                          }
+                        },
+                        fail: function (res) {}, //接口调用失败的回调函数
+                        complete: function (res) {}, //接口调用结束的回调函数（调用成功、失败都会执行）
+                      })
+                      that.setData({
+                        isZDCCheckFinished:true
+                      })
+                    }
                   }
                   if (res.data.result == 2) {
                     // wx.showModal({

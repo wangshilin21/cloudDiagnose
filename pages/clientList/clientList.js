@@ -39,9 +39,29 @@ Page({
   checkClientStatus: function (e) { //检查当前诊断头状态，定时查询
     var that = this;
     var i = 0;
+    var requestCount=0;
     var clientNumber = 0;
     var newarray = new Array();
     //console.log(e.target)
+    if(app.globalData.carType=='NULL'){
+      wx.showModal({
+        title: '请先选择车型代码',
+        showCancel: false, //是否显示取消按钮
+        confirmText: "确定", //默认是“确定”
+        confirmColor: 'skyblue', //确定文字的颜色
+        success: function (res) {
+          if (res.cancel) {
+            //点击取消,默认隐藏弹框
+          } else {
+            //点击确定
+          }
+        },
+        fail: function (res) {}, //接口调用失败的回调函数
+        complete: function (res) {}, //接口调用结束的回调函数（调用成功、失败都会执行）
+      })
+      return;
+    }
+    if(app.globalData.carType!='NULL'){
     that.data.setInter = setInterval(
       function () {
         wx.request({
@@ -56,6 +76,8 @@ Page({
           success: function (res) {
             that.data.resData = res.data;
             //console.log(that.data.resData);
+            requestCount=requestCount+1;
+            //console.log("诊断头请求次数："+requestCount);
             clientNumber = that.data.resData.keyList.length;
             //console.log(clientNumber);
             for (i = 0; i < clientNumber; i++) {
@@ -90,6 +112,7 @@ Page({
           },
         })
       }, 1000)
+    }
     //////////////以上为获取诊断头列表/////////////////////
 
     // this.setData({
