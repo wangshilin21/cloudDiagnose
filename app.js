@@ -11,6 +11,6 @@ App({
    ecuID:'none',//当前操作的ECU名称
    ecuList:[],//返回该台车的控制器列表
    chooseFunc:0,
-   globalUrl:'http://192.168.31.177:8080/CloudUDS/uds'
+   globalUrl:'http://192.168.43.132:8080/CloudUdsSys/uds'
   }
 });

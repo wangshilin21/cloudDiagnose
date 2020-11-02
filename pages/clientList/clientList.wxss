@@ -51,7 +51,7 @@ page {
   justify-content: center;
   text-align:center;
   border-radius:20px 20px 20px 20px;
-  background-color:#1c51c4;
+  background-color:#3963BC;
 }
 .btn2 image {
 	width: 75rpx;
@@ -63,7 +63,7 @@ page {
 .btn button{
 	width: 58%;
   height: 350rpx;
-  background-color: #1c51c4;
+  background-color: #1648b6;
   border-radius:20px 20px 20px 20px;
   padding-top: 50rpx;
 	margin-bottom: 10rpx;
@@ -95,7 +95,7 @@ page {
 
 .option {
   padding-top: 20rpx;
-  font-size: 38rpx;
+  font-size: 36rpx;
   color:white;
   font-family: Arial, Helvetica, sans-serif;
 

@@ -74,6 +74,7 @@ Page({
             'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
           },
           success: function (res) {
+            //console.log("返回的数据是："+res.data.function);
             that.data.resData = res.data;
             //console.log(that.data.resData);
             requestCount=requestCount+1;
@@ -96,6 +97,7 @@ Page({
                 let status = "baseConfig[" + count + "].icon"
                 //console.log("Key Status is "+that.data.resData.keyList[count].locked);
                 if (that.data.resData.keyList[count] != null) { ////仅供测试，不知是否有效
+                   //            console.log(count+"诊断头图标状态是："+that.data.resData.keyList[count].locked);
                   if (that.data.resData.keyList[count].locked == false) {
                     that.setData({
                       [status]: '/images/navigator/icon-action.png'
@@ -139,10 +141,16 @@ Page({
       //url: '/pages/navigator/content/index?title=' + title + '&navigatemark=' + navigatemark
     });
   },
+  onHide: function () {
+    clearInterval(this.data.setInter)
+    console.log("执行了OnHide")
+  },
   onLoad: function () {
-
+  var that=this;
   },
   onUnload: function () {
+    clearInterval(that.data.setInter);
+    console.log("执行了OnUnload")
     app.globalData.chooseFunc=0;
     this.setData({
       chooseFunc: app.globalData.chooseFunc

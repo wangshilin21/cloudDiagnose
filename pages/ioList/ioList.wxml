@@ -32,16 +32,6 @@
 			</view>
 		</content-card>
 
-		<content-card class="content" name="后备箱控制">
-			<view class="trunk">
-				<view class="btn5">
-					<image src="../../images/trunk.png"></image>
-					<view class="option">后备箱盖</view>
-					<switch class="lowBeam" type="switch" checked="{{trunkStatus}}" bindchange="trunkTest" />
-				</view>
-			</view>
-		</content-card>
-
 		<l-button class="returnButton" bind:lintap='switchClient' type="default" width="600" shape="semicircle">切换至其他插头</l-button>
 	</content-title>
 </view>

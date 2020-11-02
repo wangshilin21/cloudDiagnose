@@ -64,7 +64,7 @@ Page({
       url: app.globalData.globalUrl,
       data: {
         function: 4,
-        key: 123,
+        key: app.globalData.keyID,
         carType: app.globalData.carType
       },
       method: 'GET',
@@ -72,33 +72,14 @@ Page({
         'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
       },
       success: function (res) {
-        wx.showLoading({
-          title: 'loading',
-        })
-        console.log("喇叭测试返回值是"+res.data);
-        if (res.data.result == 0) {
-          wx.hideLoading();
-        }
-        if (res.data.result == 1) {
-          wx.hideLoading();
-          wx.showModal({
-            title: '诊断头状态异常',
-            showCancel: false, //是否显示取消按钮
-            confirmText: "确定", //默认是“确定”
-            confirmColor: 'skyblue', //确定文字的颜色
-            success: function (res) {
-              if (res.cancel) {
-                //点击取消,默认隐藏弹框
-              } else {
-                //点击确定
-              }
-            },
-            fail: function (res) { }, //接口调用失败的回调函数
-            complete: function (res) { }, //接口调用结束的回调函数（调用成功、失败都会执行）
-          })
-        }
+        // wx.showLoading({
+        //   title: 'loading',
+        // })
+        console.log("喇叭测试返回值是"+res.data.result);
+
       }
     })
+
   },
   trunkTest(e) {//后备箱开启 
     this.data.trunkStatus = e.detail.value;
@@ -174,7 +155,6 @@ Page({
     if (this.data.lowBeamStatus == false) {//关闭近光灯
       lowBeamAction = 1;
     }
-
     wx.request({
       url: app.globalData.globalUrl,
       data: {
@@ -188,16 +168,17 @@ Page({
         'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
       },
       success: function (res) {
-        wx.showLoading({
-          title: 'loading',
-        })
-        console.log("近光灯返回值是"+res.data);
+        // wx.showLoading({
+        //   title: 'loading',
+        // })
+        console.log("近光灯返回值是"+res.data.result);
+        console.log("Low Beam Action:"+lowBeamAction);
         // console.log(res.data.result);
         if (res.data.result == 0) {
-          wx.hideLoading();
+          // wx.hideLoading();
         }
         if (res.data.result == 1) {//诊断头异常
-          wx.hideLoading();
+          // wx.hideLoading();
           that.setData({
             lowBeamStatus: !that.data.lowBeamStatus
           })
@@ -246,16 +227,16 @@ Page({
         'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
       },
       success: function (res) {
-        wx.showLoading({
-          title: 'loading',
-        })
+        // wx.showLoading({
+        //   title: 'loading',
+        // })
         console.log("远光灯返回值是"+res.data);
         // console.log(res.data.result);
         if (res.data.result == 0) {
-          wx.hideLoading();
+          // wx.hideLoading();
         }
         if (res.data.result == 1) {//诊断头异常
-          wx.hideLoading();
+          // wx.hideLoading();
           that.setData({
             highBeamStatus: !that.data.highBeamStatus
           })
@@ -290,7 +271,6 @@ Page({
     if (this.data.alarmStatus == false) {//关闭双闪灯
       alarmAction = 1;
     }
-
     wx.request({
       url: app.globalData.globalUrl,
       data: {

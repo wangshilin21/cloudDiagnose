@@ -33,28 +33,7 @@ Page({
         'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
       },
       success: function (res) {
-        wx.request({
-          url: app.globalData.globalUrl,
-          data: {
-            function: 110,
-            key:16,
-            ecuName:"GWA"
-          },
-          method: 'GET',
-          header: {
-            'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
-          },
-          success: function (res) {
-          console.log(res.data);
-          if (res.data.result == 1){
-            console.log("失败啦")
-          }
-          if (res.data.result == 0){
-            console.log("成功啦")
-          }
-          }
-        })
-        console.log("时序标签")
+        
       }
     })
   },
